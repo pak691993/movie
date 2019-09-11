@@ -1,0 +1,49 @@
+.ghe{
+  background-color: #eee;
+  color: rgb(77, 72, 72);
+  border: none;
+  border-radius: 5px;
+  margin: 4px;
+  cursor: pointer;
+  width: 30px;
+  height: auto;
+  box-shadow: none;
+  font-size: 12px;
+  text-align: center
+}
+
+.gheDaDat {
+  background-color: black;
+  cursor: no-drop;
+}
+
+
+.gheVip{
+  background-color:orange;
+}
+.gheDangDat{
+  background-color: green;
+}
+@media screen and (max-width:992px){
+  .ghe{
+    border-radius: 5px;
+    margin: 3px;
+    cursor: pointer;
+    width: 20px;
+    height: auto;
+    box-shadow: none;
+    font-size: 6px;
+    text-align: center
+  }
+}
+@media screen and (max-width:768px){
+  .ghe{
+    margin: 1.5px;
+    cursor: pointer;
+    width: 23px;
+    height: auto;
+    box-shadow: none;
+    font-size: 10px;
+    text-align: center
+  }
+}

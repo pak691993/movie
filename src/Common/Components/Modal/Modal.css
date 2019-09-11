@@ -1,0 +1,12 @@
+/* .myModal{
+    z-index: 2;
+} */
+
+.modal-header, .modal-body{
+    background: url("http://bgfons.com/uploads/cloth/cloth_texture1068.jpg");
+}
+.modalBtn:focus,
+.modalBtn:hover,
+.modalBtn:active{
+    background: #0084ff;
+}

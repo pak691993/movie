@@ -1,0 +1,11 @@
+#infoPage{
+  margin: 30px,0,30px,0;
+}
+
+#infoPage p{
+margin: 30px
+}
+
+#infoPage input{
+  padding: 3px
+}
