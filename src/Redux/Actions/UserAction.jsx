@@ -94,7 +94,7 @@ export const capNhatThongTinNguoiDungAction = (thongTinNguoiDung) => {
                 thongTinNguoiDungCapNhat: result.data,
             })
         }).catch(error => {
-            alert('that bai' + error.response.data)         
+            alert(error.response.data)         
         })
     }
 }
