@@ -1,26 +1,8 @@
-import React, { Fragment, useEffect, useState } from 'react';
+import React, { Fragment } from 'react';
 import './Carousel.css';
-// import { connect } from 'react-redux'
-// import { layDanhSachPhimAction } from '../../../Redux/Actions/MovieAction';
-// import Slider from "react-slick";
-// import "slick-carousel/slick/slick.css";
-// import "slick-carousel/slick/slick-theme.css";
+
 
 export default function Carousel(props) {
-
-	// const [danhSach, setDanhSach] = useState([]);
-	// var settings = {
-	//     dots: true,
-	//     infinite: true,
-	//     speed: 500,
-	//     slidesToShow: 1,
-	//     slidesToScroll: 1,
-	// }
-	// useEffect(() => {
-	//     props.layDanhSachPhim();
-
-	// }, [])
-
 
 	// const _renderSlider = () => {
 	//     const { danhSachPhim } = props;

@@ -1,7 +1,7 @@
 import * as types from '../Constants/UserConstant';
 
 const stateDefault = {
-    isLogin: localStorage.getItem('userLogin').taiKhoan ? localStorage.getItem('userLogin').taiKhoan : false,
+    isLogin: localStorage.getItem('userLogin') ? localStorage.getItem('userLogin') : false,
     userLogin: [],
     userSignin: [],
     thongTinNguoiDung: [],
@@ -29,6 +29,7 @@ const userReducer = (state = stateDefault, action) => {
             state.thongTinNguoiDungCapNhat = action.thongTinNguoiDungCapNhat
             return { ...state }
         }
+        default:
     }
     return { ...state }
 }

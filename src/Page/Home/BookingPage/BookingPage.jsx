@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import { connect } from 'react-redux'
 import { layChiTietPhongVeAction, datVeAction } from '../../../Redux/Actions/MovieAction'
 import Seat from '../../../Common/Components/Seat/Seat';
@@ -13,7 +13,7 @@ function BookingPage(props) {
 
   const datVe = () => {
     if (props.danhSachGheDangDat.length > 0) {
-      if (localStorage.getItem('userLogin').taiKhoan) {
+      if (localStorage.getItem('userLogin')) {
         let { maLichChieu } = props.match.params
         let thongTinDatVe = {
           "maLichChieu": maLichChieu,

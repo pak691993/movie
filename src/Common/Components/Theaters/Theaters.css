@@ -1,5 +1,7 @@
 #theaters{
     height: 100px;
+    position: relative;
+    display: block
 }
 #theaters ul{ 
     justify-content: center;
@@ -14,27 +16,31 @@
 
 #theaters .tab-content{
     
-    position: relative;
+    position: absolute;
     left: 50%;
     transform: translate(-50%,0);
     width: 900px;
     margin: 30px 0 80px 0;
-    height: 555px; 
+    height: 355px; 
     overflow: auto;
+    border: 1px solid gray;
 }
 
 #theaters .tab-content .tablePhim{   
-    border: 0,5px solid gray;
-    display: block
+    display: block;
+    height: 350px;
 }
 
 .list{
-   width: 900px; 
+   width: 895px; 
 }
 .rap{  
     border-right: 1.5px dashed grey;
     justify-items: center;   
-    padding: 10px 0 0 20px;
+    padding: 10px 0 0 30px;
+}
+.rap p{
+    font-size: 12px;
 }
 
 .phim{
@@ -43,5 +49,40 @@
     padding: 10px;
     padding-left: 20px;
     border-bottom: 0.5px solid gray;
+}
 
+@media screen and (max-width:992px){
+    #theaters .tab-content{
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%,0);
+        width: 750px;
+        margin: 30px 0 80px 0;
+        height: 555px; 
+        overflow: auto;
+    }
+    .list{
+        width: 745px; 
+     }
+     .rap{   
+        padding: 10px 0 0 30px;
+    }
+}
+
+@media screen and (max-width:768px){
+    #theaters .tab-content{
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%,0);
+        width: 450px;
+        margin: 30px 0 80px 0;
+        height: 555px; 
+        overflow: auto;
+    }
+    .list{
+        width: 445px; 
+     }
+     .rap{  
+        padding: 10px 0 0 30px;
+    }
 }

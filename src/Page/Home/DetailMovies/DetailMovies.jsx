@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { layChiTietPhimAction } from '../../../Redux/Actions/MovieAction';
 import './DetailMovies.css'
 import { NavLink } from 'react-router-dom';
-import $ from 'jquery'
+// import $ from 'jquery'
 
 function DetailMovies(props) {
 
@@ -27,85 +27,92 @@ function DetailMovies(props) {
 		return result
 	}
 
-
-	const closeModal = () => {
-		// document.getElementsByTagName('iframe').stopVideo()
-		$('#modalTrailer').on('hidden.bs.modal', function (e) {
-			// do something...
-			$('#modalTrailer video').attr("src", $("#modalTrailer  video").attr("src"));
-		});
-	}
-
-
 	return (
-		<div className="detailMovie container mt-5">
-			<div className="row ">
-				<div className="detailMovie-img col-md-4 p-5">
-					<div className="hinhAnhPhim">
-						<img className="" src={chiTietPhim.hinhAnh} alt="/" />
-						<span type="button" className="btnPlay" data-toggle="modal" data-target="#modalTrailer" >
-							<i className="fa fa-play"></i>
-						</span>
-					</div>
-					<div>
-						<div className="modal fade" id="modalTrailer" tabIndex={-1} role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
-							<div className="modal-dialog modal-lg" role="document">
-								<div className="modal-content">
-									<button type="button" className="stop-button" data-dismiss="modal" aria-label="Close"
-										onClick={() => closeModal()}
-									>
-										<span aria-hidden="true">&times;</span>
-									</button>
-									<div className="modal-body">
-										<div className="trailer">
-
-											<iframe id="video" src={chiTietPhim.trailer} frameBorder="1" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowFullScreen ></iframe>
-
+		<Fragment>
+			<div className="detailMovie container mt-5">
+				<div className="row ">
+					<div className="detailMovie-img col-md-4 p-5">
+						<div className="hinhAnhPhim">
+							<img className="" src={chiTietPhim.hinhAnh} alt="/" />
+							<span type="button" className="btnPlay" data-toggle="modal" data-target="#modalTrailer" >
+								<i className="fa fa-play"></i>
+							</span>
+						</div>
+						<div>
+							<div className="modal fade" id="modalTrailer" tabIndex={-1} role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+								<div className="modal-dialog modal-lg" role="document">
+									<div className="modal-content">
+										<button type="button" className="stop-button" data-dismiss="modal" aria-label="Close"
+											
+										>
+											<span aria-hidden="true">&times;</span>
+										</button>
+										<div className="modal-body">
+											<div className="trailer">
+												<iframe id="video" src={chiTietPhim.trailer} frameBorder="1" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowFullScreen title="/" ></iframe>
+											</div>
 										</div>
 									</div>
-
 								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-				<div className="detailMovie-desc col-md-8">
-					<div>
-						<h1 >{chiTietPhim.tenPhim}</h1> <br />
-						<p >{chiTietPhim.moTa}</p>
-						<p>Showing: {chiTietPhim.ngayKhoiChieu}</p>
-						<p>Rating: <span className="rating">
-							{showRating(chiTietPhim.danhGia)}
-						</span></p>
+					<div className="detailMovie-desc col-md-8">
+						<div>
+							<h1 >{chiTietPhim.tenPhim}</h1> <br />
+							<p >{chiTietPhim.moTa}</p>
+							<p>Showing: {chiTietPhim.ngayKhoiChieu}</p>
+							<p>Rating: <span className="rating">
+								{showRating(chiTietPhim.danhGia)}
+							</span></p>
+						</div>
 					</div>
 				</div>
 
-			</div>
-			<div className="container">
-				<ul className="nav nav-tabs">
-					{chiTietPhim.heThongRapChieu ? chiTietPhim.heThongRapChieu.map((htr, index) => {
-						if (index == 0) {
-							return (
-								<li key={index} className="nav-item active">
-									<a className="nav-link" data-toggle="tab" href={`#${htr.maHeThongRap}`}>{htr.tenHeThongRap}</a>
-								</li>
-							)
-						}
-						else {
-							return (
-								<li key={index} className="nav-item ">
-									<a className="nav-link" data-toggle="tab" href={`#${htr.maHeThongRap}`}>{htr.tenHeThongRap}</a>
-								</li>
-							)
-						}
-					}) : ''}
-				</ul>
+				<div className="container">
+					<ul className="nav nav-tabs">
+						{chiTietPhim.heThongRapChieu ? chiTietPhim.heThongRapChieu.map((htr, index) => {
+							if (index === 0) {
+								return (
+									<li key={index} className="nav-item">
+										<a className="nav-link" data-toggle="tab" href={`#${htr.maHeThongRap}`}>{htr.tenHeThongRap}</a>
+									</li>
+								)
+							}
+							else {
+								return (
+									<li key={index} className="nav-item ">
+										<a className="nav-link" data-toggle="tab" href={`#${htr.maHeThongRap}`}>{htr.tenHeThongRap}</a>
+									</li>
+								)
+							}
+						}) : ''}
+					</ul>
 
-				<div className="tab-content">
-					{chiTietPhim.heThongRapChieu ? chiTietPhim.heThongRapChieu.map((htr, index) => {
-						if (index == 0) {
-							return (
-								<div key={index} className="tab-pane container active" id={htr.maHeThongRap}>
+					<div className="tab-content">
+						{chiTietPhim.heThongRapChieu ? chiTietPhim.heThongRapChieu.map((htr, index) => {
+							if (index === 0) {
+								return (
+									<div key={index} className="tab-pane container active" id={htr.maHeThongRap}>
+										{htr.cumRapChieu ? htr.cumRapChieu.map((cumRap, index) => {
+											return (
+												<div key={index} className="card text-left">
+													<div className="card-body">
+														<h4 className="card-title">{cumRap.tenCumRap}</h4>
+														{cumRap.lichChieuPhim ? cumRap.lichChieuPhim.map((lichChieu, index) => {
+															return (
+																<NavLink key={index} className="display-5 text-success" to={`/booking/${lichChieu.maLichChieu}`}> {lichChieu.ngayChieuGioChieu}</NavLink>
+															)
+														}) : ''}
+													</div>
+												</div>
+											)
+										}) : ''}
+									</div>
+								)
+							}
+							else {
+								return <div key={index} className="tab-pane container" id={htr.maHeThongRap}>
 									{htr.cumRapChieu ? htr.cumRapChieu.map((cumRap, index) => {
 										return (
 											<div key={index} className="card text-left">
@@ -113,7 +120,7 @@ function DetailMovies(props) {
 													<h4 className="card-title">{cumRap.tenCumRap}</h4>
 													{cumRap.lichChieuPhim ? cumRap.lichChieuPhim.map((lichChieu, index) => {
 														return (
-															<NavLink key={index} className="display-5 text-success" to={`/booking/${lichChieu.maLichChieu}`}> {lichChieu.ngayChieuGioChieu}</NavLink>
+															<NavLink key={index} className="display-5 text-success" to={`/booking/${lichChieu.maLichChieu}`}> {lichChieu.ngayChieuGioChieu} </NavLink>
 														)
 													}) : ''}
 												</div>
@@ -121,30 +128,12 @@ function DetailMovies(props) {
 										)
 									}) : ''}
 								</div>
-							)
-						}
-						else {
-							return <div key={index} className="tab-pane container" id={htr.maHeThongRap}>
-								{htr.cumRapChieu ? htr.cumRapChieu.map((cumRap, index) => {
-									return (
-										<div key={index} className="card text-left">
-											<div className="card-body">
-												<h4 className="card-title">{cumRap.tenCumRap}</h4>
-												{cumRap.lichChieuPhim ? cumRap.lichChieuPhim.map((lichChieu, index) => {
-													return (
-														<NavLink key={index} className="display-5 text-success" to={`/booking/${lichChieu.maLichChieu}`}> {lichChieu.ngayChieuGioChieu} </NavLink>
-													)
-												}) : ''}
-											</div>
-										</div>
-									)
-								}) : ''}
-							</div>
-						}
-					}) : ''}
+							}
+						}) : ''}
+					</div>
 				</div>
-			</div>
-		</div >
+			</div >	
+		</Fragment>
 	)
 }
 const mapStateToProps = (state) => {

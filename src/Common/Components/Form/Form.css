@@ -199,3 +199,10 @@ button.big {
     max-width: 498px;
   }
 }
+@media screen and (max-width:375px){
+  #form {
+    margin: 1px;
+    min-width: 300px;
+    max-width: 355px;
+  }
+}

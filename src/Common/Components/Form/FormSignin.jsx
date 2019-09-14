@@ -1,10 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { dangKyAction } from '../../../Redux/Actions/UserAction'
 
 function FormSignin(props) {
 
-  const [values, setValues] = useState({})
+  const [values, setValues] = useState({
+    taiKhoan:"",
+    matKhau: "",
+    email: "",
+    soDt: "",
+    maNhom:"GP13",
+    maLoaiNguoiDung:"",
+    hoTen: ""
+  })
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -54,23 +62,13 @@ function FormSignin(props) {
             <input name="soDT" onChange={handleChange} type="text" placeholder="Điện Thoại" required />
           </div>
         </div>
-        <div className="input-wrap ">
-          <div className="input-icon">
-            <div className="icon"><i className="fa fa-user" /></div>
-            <input name="maNhom" onChange={handleChange} type="text" placeholder="Mã Nhóm" required />
-          </div>
-        </div>
         <div className="input-wrap">
           <div className="cb-wrap">
-            <input className="glow" id="check" name="maLoaiNguoiDung" value="khachHang" onChange={handleChange} type="checkbox" check="true" required />
+            <input className="glow" id="checkLoaiNguoiDung" name="maLoaiNguoiDung" value="khachHang" onChange={handleChange} type="checkbox" check="true" required />
             <label htmlFor="check">Khách Hàng</label>
           </div>
         </div>
         <div className="flex space mt-5">
-          <div className="cb-wrap">
-            <input className="glow" id="remember" type="checkbox" name="rembember" />
-            <label htmlFor="remember">Remember me</label>
-          </div>
           <button className="primary big">Đăng Ký</button>
         </div>
       </div>

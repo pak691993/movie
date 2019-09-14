@@ -7,6 +7,7 @@ body{
   background-color: #191D27;
   background: url("http://bgfons.com/uploads/cloth/cloth_texture1068.jpg");
   background-size: cover;
+  position: relative;
 }
 button {
   cursor: pointer;
@@ -21,4 +22,9 @@ button {
 input:focus,
 button:focus {
   outline: none;
+}
+button:focus,
+button:hover,
+button:active{
+    background: #0084ff;
 }

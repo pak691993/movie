@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { dangNhapAction } from '../../../Redux/Actions/UserAction';
 import './Form.css'
@@ -9,13 +9,11 @@ function FormLogin(props) {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		props.dangNhap(values);
-
 	}
 
 	const handleChange = (e) => {
 		setValues({ ...values, [e.target.name]: e.target.value });
 	};
-
 	return (
 		<form className="flex col-1 row" id="form" onSubmit={handleSubmit}>
 			<div className="col">
@@ -42,8 +40,7 @@ function FormLogin(props) {
 						<input className="glow" id="remember" type="checkbox" name="rembember" />
 						<label htmlFor="remember">Remember me</label>
 					</div>
-					<button className="primary big">Đăng Nhập</button>
-					{/* onClick={()=>window.location.reload()}  */}
+					<button className="primary big" type="submit">Đăng Nhập</button>
 				</div>
 			</div>
 		</form >

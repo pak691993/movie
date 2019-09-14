@@ -1,11 +1,23 @@
-#infoPage{
-  margin: 30px,0,30px,0;
+.userInfo{
+  position: relative;
+  display: block;
+  margin: 50px,0,30px,0;
+  border: 1px solid gray;
+  padding: 5%;
+  background-color:rgba(0, 0, 0, .5)
 }
 
-#infoPage p{
-margin: 30px
+.userInfo p{
+margin: 20px
 }
 
-#infoPage input{
+.userInfo input{
   padding: 3px
+}
+.bookingInfo{
+  display: block;
+  margin: 50px,0,30px,0;
+  border: 1px solid gray;
+  padding: 4%;
+  background-color:rgba(0, 0, 0, .5)
 }

@@ -13,6 +13,7 @@ const ModalReducer = (state = stateDefault, action) => {
             state.ComponentModal = action.ComponentModal;
             return { ...state };
         }
+        default:
     }
     return { ...state }
 }

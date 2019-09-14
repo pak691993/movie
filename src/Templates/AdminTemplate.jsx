@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import { Route, Redirect } from 'react-router-dom';
-import SideNav from '../Common/Components/SideNav/sideNav';
+// import SideNav from '../Common/Components/SideNav/sideNav';
 
 const AdminLayout = ({ children, ...rest }) => {
   return (

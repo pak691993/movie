@@ -47,3 +47,14 @@
     text-align: center
   }
 }
+@media screen and (max-width:500px){
+  .ghe{
+    /* margin: 0.1px; */
+    cursor: pointer;
+    width: 15px;
+    height: auto;
+    box-shadow: none;
+    font-size: 5px;
+    text-align: center
+  }
+}

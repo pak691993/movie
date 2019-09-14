@@ -40,10 +40,9 @@ export const StorePhimReducer = (state = stateDefault, action) => {
                 dsGheDangDatUpdate = dsGheDangDatUpdate.filter(gheDangDat => gheDangDat.maGhe !== action.gheDangDat.maGhe);
             }
             state.danhSachGheDangDat = dsGheDangDatUpdate;
-            console.log(state.danhSachGheDangDat);
             return { ...state }
         }
-
+        default:
     }
 
     return { ...state }

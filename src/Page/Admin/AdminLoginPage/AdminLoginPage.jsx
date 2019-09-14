@@ -28,12 +28,10 @@ class AdminLoginPage extends Component {
   }
 
   render() {
-
     var userLogin = JSON.parse(localStorage.getItem('userLogin'));
     if (userLogin != null && userLogin.maLoaiNguoiDung === 'QuanTri') {
       return <Redirect to="/admin" Component={AdminPage} />
     }
-
 
     return (
       <form className="adminLogin container" onSubmit={this.onLogin}>

@@ -50,29 +50,28 @@ function ListMovies(props) {
     }, [])
 
     return (
-        <div id="listMovie">
-            <h3 className="listMovie-titile">Phim Đang Chiếu</h3>
-            <Slider {...settings} className="container">
-                {props.danhSachPhim.map((phim, index) => {
-                    return (
-                        <div key={index} className="myCard">
-                            <div className="card" >
-                                <div className="myCard-content">
-                                    <img src={phim.hinhAnh} alt={phim.maPhim} />
-                                    <p>{phim.tenPhim}</p>
-                                </div>
-                                <div className="myCard-info">
-                                    <Link to={`/detailmovies/${phim.maPhim}`}><button>Mua Vé</button></Link>
+        <Fragment>
+            <div id="listMovie">
+                <h3 className="listMovie-titile">Phim Đang Chiếu</h3>
+                <Slider {...settings} className="container">
+                    {props.danhSachPhim.map((phim, index) => {
+                        return (
+                            <div key={index} className="myCard">
+                                <div className="card" >
+                                    <div className="myCard-content">
+                                        <img src={phim.hinhAnh} alt={phim.maPhim} />
+                                        <p>{phim.tenPhim}</p>
+                                    </div>
+                                    <div className="myCard-info">
+                                        <Link to={`/detailmovies/${phim.maPhim}`}><button>Mua Vé</button></Link>
+                                    </div>
                                 </div>
                             </div>
-
-                        </div>
-
-
-                    )
-                })}
-            </Slider>
-        </div>
+                        )
+                    })}
+                </Slider>
+            </div>
+        </Fragment>
     )
 }
 const mapStateToProps = (state) => {

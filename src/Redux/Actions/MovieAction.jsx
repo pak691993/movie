@@ -3,8 +3,8 @@ import axios from 'axios';
 import * as config from '../../Common/Config/config';
 
 let api = config.domian
-// let maNhom = config.maNhom
-let maNhom = 'GP13'
+let maNhom = config.maNhom
+// let maNhom = 'GP02'
 
 export const layDanhSachPhimAction = (callback = () => { }) => {
     return dispatch => {
@@ -113,10 +113,12 @@ export const datVeAction = (thongTinDatVe) => {
                 'Authorization': 'Bearer ' + localStorage.getItem('accessToken')
             }
         }).then(result => {
+            alert(result.data);
+            window.location.reload()
             dispatch({
                 type: types.DAT_VE
             })
-            alert(result.data);
+            
         }).catch(error => {
             console.log(error.response.data)
         })

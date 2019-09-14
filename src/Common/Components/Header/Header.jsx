@@ -16,30 +16,28 @@ class Header extends Component {
 		super(props);
 		this.state = {
 			isOpen: false,
-			isLogin: localStorage.getItem('userLogin').taiKhoan ? localStorage.getItem('userLogin').taiKhoan : false,
-
 		}
 	}
 	handleToggle = () => {
 		this.setState({ isOpen: !this.state.isOpen })
 	}
-	_renderBtnLogin() {
-		let user = JSON.parse(localStorage.getItem('userLogin'));
-		if (!user || !user.taiKhoan) return (
-			<li className='header-item' data-toggle="modal" data-target="#modelId"  >
-				<div> Đăng Nhập</div>
-			</li>
-		)
-		return (
-			<li className="header-item user" >
-				{user.taiKhoan}
-				<div className="user-control">
-					<p ><Link to={`/thongTinCaNhan`}>Trang cá nhân</Link></p>
-					<p onClick={() => this.props.dangXuat()} ><Link to={`/`}>Đăng xuất</Link></p>
-				</div>
-			</li>
-		)
-	}
+	// _renderBtnLogin() {
+	// 	let user = JSON.parse(localStorage.getItem('userLogin'));
+	// 	if (!user || !user.taiKhoan) return (
+	// 		<li className='header-item' data-toggle="modal" data-target="#modelId"  >
+	// 			<div> Đăng Nhập</div>
+	// 		</li>
+	// 	)
+	// 	return (
+	// 		<li className="header-item user" >
+	// 			{user.taiKhoan}
+	// 			<div className="user-control">
+	// 				<p ><Link to={`/thongTinCaNhan`}>Trang cá nhân</Link></p>
+	// 				<p onClick={() => this.props.dangXuat()} ><Link to={`/`}>Đăng xuất</Link></p>
+	// 			</div>
+	// 		</li>
+	// 	)
+	// }
 
 	render() {
 		let user = JSON.parse(localStorage.getItem('userLogin'));
@@ -57,20 +55,18 @@ class Header extends Component {
 					<ul className={this.state.isOpen ? "header-menu header-showmenu" : "header-menu"}>
 						<li className='header-item'><a href="#listMovie">Lịch Chiếu</a></li>
 						<li className='header-item'><a href="#theaters">Cụm Rạp</a></li>
-						{/* {this.props.isLogin ?
-							// {user ?
+						{this.props.isLogin ?
 							<li className="header-item user" >
 								<div>{user.taiKhoan}</div>
 								<div className="user-control">
 									<p ><Link to={`/thongTinCaNhan`}>Trang cá nhân</Link></p>
-									<p onClick={() => this.props.dangXuat()} >Đăng Xuất</p>
+									<p onClick={() => this.props.dangXuat()} ><Link to={`/`}>Đăng xuất</Link></p>
 								</div>
 							</li>
 
 							: <li className='header-item' data-toggle="modal" data-target="#modelId"  >
 								<div> Đăng Nhập</div>
-							</li>} */}
-						{this._renderBtnLogin()}
+							</li>}
 					</ul>
 				</div>
 				<Modal Component={FormSignin} tittle="Đăng Nhập" />
@@ -89,10 +85,7 @@ const mapDispatchToProps = (dispatch) => {
 	return {
 		dangXuat: () => {
 			dispatch(dangXuatAction())
-		},
-		// dangNhap: () => {
-		// 	dispatch(dangNhapAction())
-		// }
+		}
 	}
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Header)
