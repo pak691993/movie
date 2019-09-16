@@ -1,10 +1,10 @@
-.myCarousel{
-    /* position: relative; */
+#myCarousel{
+    margin: 70px 0 0 0;
     z-index: 0;
 }
-.myCarousel img{
+#myCarousel img{
     width: 100%;
 }
-.carousel-indicators {
+#carousel-indicators {
     z-index: -1;
 }

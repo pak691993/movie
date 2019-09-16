@@ -1,7 +1,9 @@
 #theaters{
-    height: 100px;
     position: relative;
-    display: block
+    height: auto;
+    display: block;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding:20px
 }
 #theaters ul{ 
     justify-content: center;
@@ -15,27 +17,29 @@
 }
 
 #theaters .tab-content{
-    
-    position: absolute;
+    position: relative;
     left: 50%;
     transform: translate(-50%,0);
     width: 900px;
-    margin: 30px 0 80px 0;
-    height: 355px; 
+    margin: 30px 0 30px 0;
+    height: auto; 
     overflow: auto;
     border: 1px solid gray;
+    background-color: rgb(38, 42, 51); 
 }
 
 #theaters .tab-content .tablePhim{   
     display: block;
     height: 350px;
+    
 }
 
 .list{
-   width: 895px; 
+  width: 101%;
 }
 .rap{  
     border-right: 1.5px dashed grey;
+    border-bottom: 1.5px dashed grey;
     justify-items: center;   
     padding: 10px 0 0 30px;
 }
@@ -53,36 +57,67 @@
 
 @media screen and (max-width:992px){
     #theaters .tab-content{
-        position: absolute;
-        left: 50%;
-        transform: translate(-50%,0);
-        width: 750px;
-        margin: 30px 0 80px 0;
-        height: 555px; 
+        width: 100%;
+        margin: 30px 0 60px 0;
+        /* height: 555px;  */
         overflow: auto;
     }
     .list{
-        width: 745px; 
+       width: 102%;
      }
      .rap{   
         padding: 10px 0 0 30px;
+    }   
+    #theaters .theaters-logo{
+        width: 60px;
+        height: 60px;
     }
 }
 
 @media screen and (max-width:768px){
     #theaters .tab-content{
-        position: absolute;
-        left: 50%;
-        transform: translate(-50%,0);
-        width: 450px;
-        margin: 30px 0 80px 0;
-        height: 555px; 
+    
+        width: 100%;
+        margin: 30px 0 50px 0;
+        /* height: 555px;  */
         overflow: auto;
     }
     .list{
-        width: 445px; 
+       width: 103%;
      }
      .rap{  
         padding: 10px 0 0 30px;
+    }
+    .rap p{
+        font-size: 10px;
+    }
+    #theaters .theaters-logo{
+        width: 50px;
+        height: 50px;
+    }
+    
+}
+@media screen and (max-width:512px){
+    #theaters .tab-content{
+        width: 100%;
+        margin: 30px 0 40px 0;
+        /* height: 555px;  */
+        overflow: auto;
+    }
+    .list{
+       width: 103%;
+     }
+     .rap{  
+        padding: 10px 0 0 30px;
+    }
+    .rap p{
+        font-size: 8px;
+    }
+    .phim{
+        width: 100%
+    }
+    #theaters .theaters-logo{
+        width: 40px;
+        height: 40px;
     }
 }

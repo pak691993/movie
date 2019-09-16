@@ -42,7 +42,7 @@ class Header extends Component {
 	render() {
 		let user = JSON.parse(localStorage.getItem('userLogin'));
 		return (
-			<div className="myHeader">
+			<header id="myHeader">
 				<div className="header-center container">
 					<div className="header-content">
 						<Link to="/">
@@ -57,7 +57,7 @@ class Header extends Component {
 						<li className='header-item'><a href="#theaters">Cụm Rạp</a></li>
 						{this.props.isLogin ?
 							<li className="header-item user" >
-								<div>{user.taiKhoan}</div>
+								<div><a>{user.taiKhoan}</a></div>
 								<div className="user-control">
 									<p ><Link to={`/thongTinCaNhan`}>Trang cá nhân</Link></p>
 									<p onClick={() => this.props.dangXuat()} ><Link to={`/`}>Đăng xuất</Link></p>
@@ -65,13 +65,13 @@ class Header extends Component {
 							</li>
 
 							: <li className='header-item' data-toggle="modal" data-target="#modelId"  >
-								<div> Đăng Nhập</div>
+								<a> Đăng Nhập</a>
 							</li>}
 					</ul>
 				</div>
 				<Modal Component={FormSignin} tittle="Đăng Nhập" />
 				<Modal Component={FormLogin} tittle="Đăng Ký" />
-			</div>
+			</header>
 		)
 	}
 }

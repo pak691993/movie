@@ -1,15 +1,15 @@
-/* .detailMovie{
-    margin-top:3%
-} */
-.detailMovie{
+#detailMovie{
     position:relative;
 }
-.detailMovie .row{
+
+.detail{
+    margin:100px 0 40px 0
+}
+#detailMovie .detail{
     background: url("../../../img/nightskyjpg.jpg");
     background-size:cover ;
 }
-
-.detailMovie-img img{
+.detail-img img{
     width: 100%;
     height: 100%;
     opacity:1;
@@ -17,12 +17,12 @@
 .rating{
    color: orange;
 }
-.detailMovie .hinhAnhPhim{
+.detail .hinhAnhPhim{
     text-align: center;  
     transition: all,0.3s
 }
 
-.detailMovie .hinhAnhPhim i{
+#detailMovie .hinhAnhPhim i{
     display: none;
     position: absolute;
     top: 50%;
@@ -32,14 +32,14 @@
     box-shadow: none;
     font-size: 3rem;
 }
-.detailMovie .hinhAnhPhim:hover i{
+#detailMovie .hinhAnhPhim:hover i{
     display: block;
     opacity: 1;
 }
-.detailMovie .hinhAnhPhim:hover img{
+#detailMovie .hinhAnhPhim:hover img{
     opacity: 0.7;
 }
-.detailMovie-desc{
+#detailMovie-desc{
     margin-top:2.5rem;
     letter-spacing: 1.3px
 }
@@ -48,10 +48,10 @@
     height:512px;
 }
 @media screen and (max-width: 992px){
-.detailMovie-desc h1{
+#detailMovie-desc h1{
     font-size: 1.7rem;
 }
-.detailMovie-desc p{
+#detailMovie-desc p{
     font-size: 0.9rem;
 }
 .trailer iframe{
@@ -60,14 +60,14 @@
 }
 }
 @media screen and (max-width:768px){
-    .detailMovie-img img{
+    #detailMovie-img img{
         width: 60%;
         height: 60%;
     }
-    .detailMovie-desc{
+    #detailMovie-desc{
         margin-top: 1rem;
     }
-    .trailer iframe{
+    #trailer iframe{
         width:460px;
         height:300px;
     }

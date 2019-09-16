@@ -1,6 +1,7 @@
 import axios from 'axios';
 import * as types from '../Constants/UserConstant';
 import * as config from '../../Common/Config/config';
+import Swal from 'sweetalert2'
 
 let api = config.domian
 
@@ -13,8 +14,17 @@ export const dangNhapAction = (user) => {
         }).then(result => {
             localStorage.setItem(config.accessToken, result.data.accessToken)
             localStorage.setItem(config.userLogin, JSON.stringify(result.data))
-            alert('Đăng nhập thành công')
-            window.location.reload()
+            Swal.fire({
+                position: 'top-end',
+                type: 'success',
+                title: 'Đăng nhập thành công',
+                showConfirmButton: false,
+                timer: 500
+              })
+            setTimeout(() => {
+                window.location.reload()
+            }, 800);
+            
             dispatch({
                 type: types.DANG_NHAP,
                 isLogin: true,
@@ -25,7 +35,13 @@ export const dangNhapAction = (user) => {
                 type: types.DANG_NHAP,
                 isLogin: false
             })
-            alert(error.response.data)
+            Swal.fire({
+                position: 'top-end',
+                type: 'error',
+                title: error.response.data,
+                showConfirmButton: true,
+                timer:1000
+              })
         })
     }
 }
@@ -36,14 +52,27 @@ export const dangKyAction = (user) => {
             url: api + 'QuanLyNguoiDung/DangKy',
             data: user
         }).then(result => {
-            alert('Đăng ký thành công')
-            window.location.reload()
+            Swal.fire({
+                position: 'top-end',
+                type: 'success',
+                title: 'Đăng ký thành công',
+                showConfirmButton: false,
+                timer: 500
+              })
+            setTimeout(() => {
+                window.location.reload()
+            }, 800);
             dispatch({
                 type: types.DANG_KY,
                 userSignin: result.data
             })
         }).catch(error => {
-            console.log(error.response.data);
+            Swal.fire({
+                position: 'top-end',
+                type: 'error',
+                title: error.response.data,
+                showConfirmButton: true,
+              })
         })
     }
 
@@ -87,14 +116,28 @@ export const capNhatThongTinNguoiDungAction = (thongTinNguoiDung) => {
                 "Authorization": "Bearer  " + localStorage.getItem('accessToken')
             }
         }).then(result => {
-            alert('Cập Nhật Thành Công' );
+            Swal.fire({
+                position: 'top-end',
+                type: 'success',
+                title: 'Cập nhập thành công',
+                showConfirmButton: false,
+                timer: 500
+              })
+            setTimeout(() => {
                 window.location.reload()
+            }, 800);
             dispatch({
                 type: types.CAP_NHAT_THONG_TIN_NGUOI_DUNG,
                 thongTinNguoiDungCapNhat: result.data,
             })
         }).catch(error => {
-            alert(error.response.data)         
+            Swal.fire({
+                position: 'top-end',
+                type: 'success',
+                title: error.response.data,
+                showConfirmButton: false,
+                timer: 500
+              })           
         })
     }
 }

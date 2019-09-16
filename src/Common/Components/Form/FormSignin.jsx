@@ -10,13 +10,12 @@ function FormSignin(props) {
     email: "",
     soDt: "",
     maNhom:"GP13",
-    maLoaiNguoiDung:"",
+    maLoaiNguoiDung:"KhachHang",
     hoTen: ""
   })
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(values);
     props.dangKy(values)
   }
 
@@ -35,19 +34,19 @@ function FormSignin(props) {
         <div className="input-wrap">
           <div className="input-icon">
             <div className="icon"><i className="fa fa-user" /></div>
-            <input name="hoTen" onChange={handleChange} type="text" placeholder="Họ và Tên" />
-          </div>
-        </div>
-        <div className="input-wrap">
-          <div className="input-icon">
-            <div className="icon"><i className="fa fa-user" /></div>
             <input name="taiKhoan" onChange={handleChange} type="text" placeholder="Tài Khoản" />
           </div>
         </div>
         <div className="input-wrap">
           <div className="input-icon">
             <div className="icon"><i className="fa fa-key" /></div>
-            <input name="matKhau" onChange={handleChange} type="text" placeholder="Mật Khẩu" required />
+            <input name="matKhau" onChange={handleChange} type="password" placeholder="Mật Khẩu" required />
+          </div>
+        </div>
+        <div className="input-wrap">
+          <div className="input-icon">
+            <div className="icon"><i className="fa fa-user" /></div>
+            <input name="hoTen" onChange={handleChange} type="text" placeholder="Họ và Tên" />
           </div>
         </div>
         <div className="input-wrap">
@@ -60,12 +59,6 @@ function FormSignin(props) {
           <div className="input-icon">
             <div className="icon"><i className="fa fa-phone" /></div>
             <input name="soDT" onChange={handleChange} type="text" placeholder="Điện Thoại" required />
-          </div>
-        </div>
-        <div className="input-wrap">
-          <div className="cb-wrap">
-            <input className="glow" id="checkLoaiNguoiDung" name="maLoaiNguoiDung" value="khachHang" onChange={handleChange} type="checkbox" check="true" required />
-            <label htmlFor="check">Khách Hàng</label>
           </div>
         </div>
         <div className="flex space mt-5">

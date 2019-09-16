@@ -1,19 +1,17 @@
-.myHeader {
-    /* position: relative; */
-    font-family: schoolbell,cursive;
+#myHeader {
     width: 100%;
+    top: 0;
     align-items: center;
     color: #fafafa;
     border: 2px solid  #35eaff;
     box-shadow: inset 0 0 15px #00e5ff, 0 0 100px #00e5ff;
     background-color: #3f3f3f21;
     border-radius: 5px;
-    /* position: fixed; */
     z-index: 10;
-    
+ background-color: rgba(0, 0, 0, 0.8)
 }
 
-.myHeader img {
+#myHeader img {
     padding: 0.5rem 0;
     width: 10rem;
     margin-top: 0.3rem;

@@ -1,5 +1,6 @@
 #listMovie{
-    margin:60px 0 0 0
+    background-color: rgba(0, 0, 0, .3);
+    padding:30px 0 30px 0;
 }
 .listMovie-titile{
     text-align: center;
@@ -15,15 +16,13 @@
     background: none;
     border:none;
 }
-
 .myCard img{
     border-radius: 5%;
-    height: 339px;
+    height: 309px;
     transition: all 0.5s
 }
 .myCard-content p{
     text-align: center;
-    /* margin-top:5px; */
     font-size: 12px;
 }
 .myCard-info{
@@ -35,6 +34,8 @@
 .myCard:hover img{
     background-color: rgba(0,0,0,0.5);
     opacity: 0.3;
+    transform: scale(1.1);
+    border-radius: 5%
 }
 .myCard:hover p{
     display: none

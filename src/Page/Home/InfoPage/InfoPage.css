@@ -1,9 +1,20 @@
+#infoPage{
+  margin: 100px 0 30px 0
+}
+/* .user{
+  margin: 50px 0 50px 0;
+} */
+.user__info{
+text-align: center;
+text-transform: uppercase
+}
+.user__info div{
+  margin:10px 0
+}
 .userInfo{
-  position: relative;
-  display: block;
-  margin: 50px,0,30px,0;
+
   border: 1px solid gray;
-  padding: 5%;
+  padding: 0.5%;
   background-color:rgba(0, 0, 0, .5)
 }
 
@@ -12,12 +23,26 @@ margin: 20px
 }
 
 .userInfo input{
-  padding: 3px
+  padding: 5px;
+  border-radius: 5%;
+  width: 70%;
+  transition: background-color 0.2s ease;
+border: none
 }
 .bookingInfo{
   display: block;
-  margin: 50px,0,30px,0;
-  border: 1px solid gray;
   padding: 4%;
-  background-color:rgba(0, 0, 0, .5)
 }
+
+#infoPage button:focus,
+#infoPage button:hover,
+#infoPage button:active{
+    background: #0084ff;
+}
+/* @media screen and (max-width:375px){
+  .userInfo input{
+    padding: 3px;
+    border-radius: 5%;
+    width: 80%;
+  }
+} */

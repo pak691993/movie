@@ -5,22 +5,19 @@ export default class Footer extends Component {
   render() {
     return (
       <footer id="footer" >
-        <div className="col-xs-12">
           <div className="container">
             <div className="row ">
-              <div className="col-md-4 col-sm-3 ">
+              <div className="col-md-4 col-sm-3 col-4 ">
                 <p className="title">Movie Start</p>
-                <div className="row">
-                  <div className="col-md-6 col-sm-6">
+                  <div >
                     <a>VỀ CHÚNG TÔI</a><br />
                     <a >FAQ</a><br />
                     <a >LIÊN HỆ</a>
                   </div>
-                </div>
               </div>
-              <div className="col-md-4 col-sm-5">
+              <div className="col-md-4 col-sm-7 col-4">
                 <p className="title">ĐỐI TÁC</p>
-                <div className="row col-md-12 col-sm-6 linePartner">
+                <div className="row col-md-12 col-sm-12 col-12">
                   <div>
                     <a target="_blank" href="http://bhdstar.vn" title="BHD">
                       <img className="footerLogo" src="https://www.bhdstar.vn/wp-content/uploads/2016/05/logo.png" />
@@ -37,7 +34,7 @@ export default class Footer extends Component {
                     </a>
                   </div>
                 </div>
-                <div className="row col-md-12 col-sm-6 linePartner">
+                <div className="row col-md-12 col-sm-12 col-12">
                   <div>
                     <a target="_blank" href="http://cgv.vn" title="cgv">
                       <img className="footerLogo" src="https://www.cgv.vn/skin/frontend/cgv/default/images/cgvlogo.png" />
@@ -54,12 +51,10 @@ export default class Footer extends Component {
                     </a>
                   </div>
                 </div>
-                <div className="row col-md-12 col-sm-12">
-                </div>
               </div>
-              <div className="col-md-4 col-sm-2">
+              <div className="col-md-4 col-sm-2 col-4">
                 <div className="row">
-                  <div className="col-md-6">
+                  <div className="col-md-6 col-sm-6 col-7">
                     <p className="title">MOBILE APP</p>
                     <a href="#" title="Apple App">
                       <img className="iconApp" src="https://123phim.vn/app/assets/img/icons/apple-logo.png" />
@@ -68,7 +63,7 @@ export default class Footer extends Component {
                       <img className="iconApp" src="https://123phim.vn/app/assets/img/icons/android-logo.png" />
                     </a>
                   </div>
-                  <div className="col-md-6">
+                  <div className="col-md-6 col-sm-6 col-5">
                     <p className="title">SOCIAL</p>
                     <a href="#" title="Facebook social">
                       <img className="iconApp" src="https://123phim.vn/app/assets/img/icons/facebook-logo.png" />
@@ -81,7 +76,6 @@ export default class Footer extends Component {
               </div>
             </div>
           </div>
-        </div>
       </footer >
     )
   }

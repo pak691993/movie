@@ -18,7 +18,7 @@ export const layDanhSachPhimAction = (callback = () => { }) => {
                 danhSachPhim: result.data
             })
         }).catch(error => {
-            // console.log(error.response.data);
+            console.log(error.response.data);
         })
     }
 }
@@ -34,7 +34,7 @@ export const layThongTinHeThongRapAction = () => {
                 thongTinHeThongRap: result.data
             })
         }).catch(error => {
-            // console.log(error.response.data);
+            console.log(error.response.data);
         })
     }
 }
@@ -82,7 +82,7 @@ export const layThongTinLichChieuHeThongRapAction = (maHeThongRap) => {
                 thongTinLichChieuHeThongRap: result.data,
             })
         }).catch(error => {
-            // console.log(error.response.data);
+            console.log(error.response.data);
         })
     }
 }
