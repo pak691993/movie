@@ -16,7 +16,7 @@ function FormLogin(props) {
 		setValues({ ...values, [e.target.name]: e.target.value });
 	};
 	return (
-		<form className="flex col-1 row" id="form" onSubmit={handleSubmit}>
+		<form className="form flex col-1 row"  onSubmit={handleSubmit}>
 			<div className="col">
 				<div className="col-spacer">
 					<div className="form-header">
@@ -27,20 +27,20 @@ function FormLogin(props) {
 				<div className="input-wrap">
 					<div className="input-icon">
 						<div className="icon"><i className="fa fa-user" /></div>
-						<input type="text" name="taiKhoan" onChange={handleChange} required placeholder="Tài Khoản" />
-					</div><a className="input-desc" href="#">Quên tài khoản?</a>
+						<input type="text" name="taiKhoan"  onChange={handleChange} required placeholder="Tài Khoản" />
+					</div><a className="input-desc" href="/">Quên tài khoản?</a>
 				</div>
 				<div className="input-wrap">
 					<div className="input-icon">
 						<div className="icon"><i className="fa fa-key" /></div>
-						<input type="password" name="matKhau" onChange={handleChange} required placeholder="Mật Khẩu" />
-					</div><a className="input-desc" href="#">Quên mật khẩu?</a>
+						<input type="password" name="matKhau" autoComplete="password" onChange={handleChange} required placeholder="Mật Khẩu" />
+					</div><a className="input-desc" href="/">Quên mật khẩu?</a>
 				</div>
 				<div className="flex space mt-5">
-					<div className="cb-wrap">
+					{/* <div className="cb-wrap">
 						<input className="glow" id="remember" type="checkbox" name="rembember" />
 						<label htmlFor="remember">Remember me</label>
-					</div>
+					</div> */}
 					<button className="primary big" type="submit">Đăng Nhập</button>
 				</div>
 			</div>

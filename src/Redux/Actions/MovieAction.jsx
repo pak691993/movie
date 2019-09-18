@@ -1,6 +1,7 @@
 import * as types from '../Constants/MovieConstant'
 import axios from 'axios';
 import * as config from '../../Common/Config/config';
+import Swal from 'sweetalert2'
 
 let api = config.domian
 let maNhom = config.maNhom
@@ -113,8 +114,16 @@ export const datVeAction = (thongTinDatVe) => {
                 'Authorization': 'Bearer ' + localStorage.getItem('accessToken')
             }
         }).then(result => {
-            alert(result.data);
-            window.location.reload()
+            Swal.fire({
+                position: 'top-end',
+                type: 'success',
+                title: result.data,
+                showConfirmButton: false,
+                timer: 500
+              })
+            setTimeout(() => {
+                window.location.reload()
+            }, 800);
             dispatch({
                 type: types.DAT_VE
             })

@@ -41,6 +41,7 @@
 @media screen and (max-width:512px){
   #footer{
     font-size: 10px;
+    height: 120px;
   }
   #footer img{
     width: 15px;
@@ -50,6 +51,7 @@
 @media screen and (max-width:375px){
   #footer{
     font-size: 8px;
+    height: 100px;
   }
   #footer img{
     width: 10px;

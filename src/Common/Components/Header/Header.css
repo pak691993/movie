@@ -121,7 +121,7 @@
         position: absolute;
         left: 1px;
         top: 62.88px;
-        background-color: #272727b4;
+        background-color:rgba(0, 0, 0, 1);
         height: 0;
         overflow: hidden;
         transition: all 0.3s;

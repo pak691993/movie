@@ -21,7 +21,7 @@ a {
   font-size: 1.4rem;
   margin-right: 1rem;
 }
-#form {
+.form {
   margin: 4px;
   min-width: 700px;
   max-width: 800px;
@@ -32,41 +32,41 @@ a {
   background-color: #3f3f3f21;
   border-radius: 5px;
 }
-#form .left {
+.form .left {
   flex: 1 60%;
   border-right: 2px solid;
   border-color: #35eaff;
   box-shadow: inset 0 0 15px #00e5ff, 0 0 15px #00e5ff;
 }
-#form .right {
+.form .right {
   flex: 1 40%;
 }
-#form .right > button {
+.form .right > button {
   margin: 2px 0;
 }
-#form .input-wrap {
+.form .input-wrap {
   margin-bottom: 0.5rem;
 }
-#form .input-wrap .input-desc {
+.form .input-wrap .input-desc {
   text-align: right;
   font-size: 0.8rem;
   margin: 4px 0;
   display: block;
 }
-#form .input-icon {
+.form .input-icon {
   display: flex;
   background-color: rgba(0,0,0,0.502);
   align-items: center;
   border-radius: 5px;
   border-bottom: 1px solid rgba(255,255,255,0.38);
 }
-#form .input-icon .icon {
+.form .input-icon .icon {
   color: #fafafa;
   margin: 0 1rem;
   position: absolute;
   pointer-events: none;
 }
-#form .input-icon input {
+.form .input-icon input {
   border: none;
   background: none;
   color: #fafafa;
@@ -76,7 +76,7 @@ a {
   flex: 1;
   transition: background-color 0.2s ease;
 }
-#form .input-icon input:focus {
+.form .input-icon input:focus {
   background-color: rgba(250,250,250,0.15);
 }
 
@@ -186,21 +186,21 @@ button.big {
   display:none
 }
 @media screen and (max-width:992px){
-  #form {
+  .form {
     margin: 4px;
     min-width: 418px;
     max-width: 498px;
   }
 }
 @media screen and (max-width:768px){
-  #form {
+  .form {
     margin: 4px;
     min-width: 418px;
     max-width: 498px;
   }
 }
 @media screen and (max-width:375px){
-  #form {
+  .form {
     margin: 1px;
     min-width: 300px;
     max-width: 355px;

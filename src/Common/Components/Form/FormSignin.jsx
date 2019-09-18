@@ -23,7 +23,7 @@ function FormSignin(props) {
     setValues({ ...values, [e.target.name]: e.target.value });
   };
   return (
-    <form className="flex col-1 row" id="form" onSubmit={handleSubmit}>
+    <form className="form flex col-1 row" onSubmit={handleSubmit}>
       <div className="left col">
         <div className="col-spacer">
           <div className="form-header">
@@ -40,7 +40,7 @@ function FormSignin(props) {
         <div className="input-wrap">
           <div className="input-icon">
             <div className="icon"><i className="fa fa-key" /></div>
-            <input name="matKhau" onChange={handleChange} type="password" placeholder="Mật Khẩu" required />
+            <input name="matKhau" onChange={handleChange} type="password"  autoComplete="password" placeholder="Mật Khẩu" required />
           </div>
         </div>
         <div className="input-wrap">

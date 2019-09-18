@@ -4,13 +4,14 @@ import {
   layThongTinHeThongRapAction,
   layThongTinLichChieuHeThongRapAction
 } from "../../../Redux/Actions/MovieAction";
-import { NavLink } from "react-router-dom";
+// import { NavLink } from "react-router-dom";
 import "./Theaters.css";
 
 function Theaters(props) {
   useEffect(() => {
     props.layThongTinHeThongRap();
     props.laythongTinLichChieuHeThongRap("BHDStar");
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   let { thongTinHeThongRap } = props;

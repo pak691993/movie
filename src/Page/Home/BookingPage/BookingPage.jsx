@@ -12,7 +12,7 @@ function BookingPage(props) {
   useEffect(() => {
     let { maLichChieu } = props.match.params;
     props.layChiTietPhongVe(maLichChieu);
-  }, []);
+  }, [props]);
 
   const datVe = () => {
     if (props.danhSachGheDangDat.length > 0) {

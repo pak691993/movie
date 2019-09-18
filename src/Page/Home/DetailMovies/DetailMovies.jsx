@@ -3,13 +3,14 @@ import { connect } from "react-redux";
 import { layChiTietPhimAction } from "../../../Redux/Actions/MovieAction";
 import "./DetailMovies.css";
 import { NavLink } from "react-router-dom";
+// import moment from 'moment'
 // import $ from 'jquery'
 
 function DetailMovies(props) {
   useEffect(() => {
     let { maPhim } = props.match.params;
     props.layChiTietPhim(maPhim);
-  }, []);
+  }, [props]);
 
   let { chiTietPhim } = props;
 
@@ -147,14 +148,23 @@ function DetailMovies(props) {
                                       {cumRap.lichChieuPhim
                                         ? cumRap.lichChieuPhim.map(
                                             (lichChieu, index) => {
+                                              // console.log({moment().format(`${lichChieu.ngayChieuGioChieu}`))
+
                                               return (
                                                 <NavLink
                                                   key={index}
-                                                  className="display-5 text-success"
+                                                  className="display-5 text-success m-2"
                                                   to={`/booking/${lichChieu.maLichChieu}`}
                                                 >
-                                                  {" "}
+                                                  {/* // {moment().format(`${lichChieu.ngayChieuGioChieu}`) } */}
+                                                  {/* {moment(`${lichChieu.ngayChieuGioChieu}`).format("hh:mm")} */}
+                                                  {/* {_fortmatData(lichChieu)} */}
                                                   {lichChieu.ngayChieuGioChieu}
+                                                  {(index + 1) % 5 === 0 ? (
+                                                    <br />
+                                                  ) : (
+                                                    ""
+                                                  )}
                                                 </NavLink>
                                               );
                                             }
@@ -188,13 +198,18 @@ function DetailMovies(props) {
                                               return (
                                                 <NavLink
                                                   key={index}
-                                                  className="display-5 text-success"
+                                                  className="display-5 text-success m-2"
                                                   to={`/booking/${lichChieu.maLichChieu}`}
                                                 >
-                                                  {" "}
-                                                  {
-                                                    lichChieu.ngayChieuGioChieu
-                                                  }{" "}
+                                                  {/* {
+                                                    lichChieu.ngayChieuGioChieu.slice(14,19)
+                                                  } */}
+                                                   {lichChieu.ngayChieuGioChieu}
+                                                  {(index + 1) % 5 === 0 ? (
+                                                    <br />
+                                                  ) : (
+                                                    ""
+                                                  )}
                                                 </NavLink>
                                               );
                                             }
@@ -233,3 +248,55 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(DetailMovies);
+
+//moment(`${lichChieu.ngayChieuGioChieu}`).format("hh:mm")
+// const _fortmatData = arr => {
+//   let temp = {};
+//   for (let index = 0; index < arr.length; index++) {
+//     const item = arr[index];
+//     let test = temp[item.ngayChieuGioChieu];
+//     //test co hoac khong - test = item || test = undefine
+//     if (test) {
+//       temp[item.ngayChieuGioChieu].ngayChieuGioChieu.push(
+//         item.ngayChieuGioChieu.slice(14, 19)
+//       );
+//     } else {
+//       temp[item.ngayChieuGioChieu] = {
+//         ...item,
+//         ngayChieuGioChieu: [item.ngayChieuGioChieu.slice(14, 19)]
+//       };
+//     }
+//   }
+//   return Object.values(temp);
+// };
+
+// const data = [
+// 	{
+// 		"maPhim": 1359,
+// 		"tenPhim": "Home",
+// 		"maRap": "512",
+// 		"tenRap": "Rạp 2",
+// 		"ngayChieuGioChieu": "2019-01-01T10:10:00",
+// 		"giaVe": 75000
+//   },
+//   {
+// 		"maPhim": 1359,
+// 		"tenPhim": "Home",
+// 		"maRap": "512",
+// 		"tenRap": "Rạp 2",
+// 		"ngayChieuGioChieu": "2019-01-01T10:6:00",
+// 		"giaVe": 75000
+//   },
+//   {
+// 		"maPhim": 1359,
+// 		"tenPhim": "Home",
+// 		"maRap": "512",
+// 		"tenRap": "Rạp 2",
+// 		"ngayChieuGioChieu": "2019-01-01T10:2:00",
+// 		"giaVe": 75000
+//   },
+// ]
+
+// console.log(data);
+// let check  = _fortmatData(data)
+// console.log(check);

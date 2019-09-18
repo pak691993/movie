@@ -46,7 +46,7 @@ function ListMovies(props) {
 
   useEffect(() => {
     props.layDanhSachPhim();
-  }, []);
+  }, [props]);
 
   return (
     <Fragment>

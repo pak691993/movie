@@ -26,7 +26,7 @@ export default function Carousel(props) {
     <section id="myCarousel">
       <Fragment>
         <div id="carouselId" className="carousel slide" data-ride="carousel">
-          <ol className="carousel-indicators">
+          {/* <ol className="carousel-indicators">
             <li
               data-target="#carouselId"
               data-slide-to={0}
@@ -34,7 +34,7 @@ export default function Carousel(props) {
             />
             <li data-target="#carouselId" data-slide-to={1} />
             <li data-target="#carouselId" data-slide-to={2} />
-          </ol>
+          </ol> */}
           <div className="carousel-inner" role="listbox">
             <div className="carousel-item active">
               <img

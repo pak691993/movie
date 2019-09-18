@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import {
   layThongTinNguoiDungAction,
@@ -35,6 +35,7 @@ function InfoPage(props) {
       taiKhoan: JSON.parse(localStorage.getItem("userLogin")).taiKhoan
     };
     props.layThongTinNguoiDung(taiKhoanNguoiDung);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   let { thongTinNguoiDung } = props;

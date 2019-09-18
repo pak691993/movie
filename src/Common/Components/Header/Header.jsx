@@ -57,7 +57,7 @@ class Header extends Component {
 						<li className='header-item'><a href="#theaters">Cụm Rạp</a></li>
 						{this.props.isLogin ?
 							<li className="header-item user" >
-								<div><a>{user.taiKhoan}</a></div>
+								<div><span>{user.taiKhoan}</span></div>
 								<div className="user-control">
 									<p ><Link to={`/thongTinCaNhan`}>Trang cá nhân</Link></p>
 									<p onClick={() => this.props.dangXuat()} ><Link to={`/`}>Đăng xuất</Link></p>
@@ -65,7 +65,7 @@ class Header extends Component {
 							</li>
 
 							: <li className='header-item' data-toggle="modal" data-target="#modelId"  >
-								<a> Đăng Nhập</a>
+								<span> Đăng Nhập</span>
 							</li>}
 					</ul>
 				</div>
