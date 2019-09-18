@@ -86,8 +86,8 @@ function InfoPage(props) {
 
   return (
     <section id="infoPage">
-      <div class="container">
-        <div class="userInfo row">
+      <div className="container">
+        <div className="userInfo row">
           <div className="col-sm-12 col-md-4 col-lg-3 col-xl-3  user__info">
             <div className="user__avatar">
               <img src={avatar} alt="avatar" />
