@@ -120,7 +120,7 @@
         flex-direction: column;
         position: absolute;
         left: 1px;
-        top: 62.88px;
+        top: 59.88px;
         background-color:rgba(0, 0, 0, 1);
         height: 0;
         overflow: hidden;
@@ -128,7 +128,7 @@
         list-style-type: none;
         width: 40%;
         border-radius: 0 0 10% 10%;
-        border: 1px solid  #35eaff;
+        border: 1px solid  #00e5ff;
         box-shadow: inset 0 0 15px #00e5ff, 0 0 20px #00e5ff;
         z-index: 1;
     }

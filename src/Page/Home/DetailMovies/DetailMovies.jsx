@@ -10,7 +10,8 @@ function DetailMovies(props) {
   useEffect(() => {
     let { maPhim } = props.match.params;
     props.layChiTietPhim(maPhim);
-  }, [props]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   let { chiTietPhim } = props;
 
@@ -98,132 +99,127 @@ function DetailMovies(props) {
             <ul className="nav nav-tabs">
               {chiTietPhim.heThongRapChieu
                 ? chiTietPhim.heThongRapChieu.map((htr, index) => {
-                    if (index === 0) {
-                      return (
-                        <li key={index} className="nav-item">
-                          <a
-                            className="nav-link"
-                            data-toggle="tab"
-                            href={`#${htr.maHeThongRap}`}
-                          >
-                            {htr.tenHeThongRap}
-                          </a>
-                        </li>
-                      );
-                    } else {
-                      return (
-                        <li key={index} className="nav-item ">
-                          <a
-                            className="nav-link"
-                            data-toggle="tab"
-                            href={`#${htr.maHeThongRap}`}
-                          >
-                            {htr.tenHeThongRap}
-                          </a>
-                        </li>
-                      );
-                    }
-                  })
+                  if (index === 0) {
+                    return (
+                      <li key={index} className="nav-item">
+                        <a
+                          className="nav-link"
+                          data-toggle="tab"
+                          href={`#${htr.maHeThongRap}`}
+                        >
+                          {htr.tenHeThongRap}
+                        </a>
+                      </li>
+                    );
+                  } else {
+                    return (
+                      <li key={index} className="nav-item ">
+                        <a
+                          className="nav-link"
+                          data-toggle="tab"
+                          href={`#${htr.maHeThongRap}`}
+                        >
+                          {htr.tenHeThongRap}
+                        </a>
+                      </li>
+                    );
+                  }
+                })
                 : ""}
             </ul>
 
             <div className="tab-content">
               {chiTietPhim.heThongRapChieu
                 ? chiTietPhim.heThongRapChieu.map((htr, index) => {
-                    if (index === 0) {
-                      return (
-                        <div
-                          key={index}
-                          className="tab-pane container active"
-                          id={htr.maHeThongRap}
-                        >
-                          {htr.cumRapChieu
-                            ? htr.cumRapChieu.map((cumRap, index) => {
-                                return (
-                                  <div key={index} className="card text-left">
-                                    <div className="card-body">
-                                      <h4 className="card-title">
-                                        {cumRap.tenCumRap}
-                                      </h4>
-                                      {cumRap.lichChieuPhim
-                                        ? cumRap.lichChieuPhim.map(
-                                            (lichChieu, index) => {
-                                              // console.log({moment().format(`${lichChieu.ngayChieuGioChieu}`))
-
-                                              return (
-                                                <NavLink
-                                                  key={index}
-                                                  className="display-5 text-success m-2"
-                                                  to={`/booking/${lichChieu.maLichChieu}`}
-                                                >
-                                                  {/* // {moment().format(`${lichChieu.ngayChieuGioChieu}`) } */}
-                                                  {/* {moment(`${lichChieu.ngayChieuGioChieu}`).format("hh:mm")} */}
-                                                  {/* {_fortmatData(lichChieu)} */}
-                                                  {lichChieu.ngayChieuGioChieu}
-                                                  {(index + 1) % 5 === 0 ? (
-                                                    <br />
-                                                  ) : (
-                                                    ""
-                                                  )}
-                                                </NavLink>
-                                              );
-                                            }
-                                          )
-                                        : ""}
-                                    </div>
-                                  </div>
-                                );
-                              })
-                            : ""}
-                        </div>
-                      );
-                    } else {
-                      return (
-                        <div
-                          key={index}
-                          className="tab-pane container"
-                          id={htr.maHeThongRap}
-                        >
-                          {htr.cumRapChieu
-                            ? htr.cumRapChieu.map((cumRap, index) => {
-                                return (
-                                  <div key={index} className="card text-left">
-                                    <div className="card-body">
-                                      <h4 className="card-title">
-                                        {cumRap.tenCumRap}
-                                      </h4>
-                                      {cumRap.lichChieuPhim
-                                        ? cumRap.lichChieuPhim.map(
-                                            (lichChieu, index) => {
-                                              return (
-                                                <NavLink
-                                                  key={index}
-                                                  className="display-5 text-success m-2"
-                                                  to={`/booking/${lichChieu.maLichChieu}`}
-                                                >
-                                                  {/* {
-                                                    lichChieu.ngayChieuGioChieu.slice(14,19)
-                                                  } */}
-                                                   {lichChieu.ngayChieuGioChieu}
-                                                  {(index + 1) % 5 === 0 ? (
-                                                    <br />
-                                                  ) : (
-                                                    ""
-                                                  )}
-                                                </NavLink>
-                                              );
-                                            }
-                                          )
-                                        : ""}
-                                    </div>
-                                  </div>
-                                );
-                              })
-                            : ""}
-                        </div>
-                      );
-                    }
-                  })
+                  if (index === 0) {
+                    return (
+                      <div
+                        key={index}
+                        className="tab-pane container active"
+                        id={htr.maHeThongRap}
+                      >
+                        {htr.cumRapChieu
+                          ? htr.cumRapChieu.map((cumRap, index) => {
+                            return (
+                              <div key={index} className="card text-left">
+                                <div className="card-body">
+                                  <h4 className="card-title">
+                                    {cumRap.tenCumRap}
+                                  </h4>
+                                  {cumRap.lichChieuPhim
+                                    ? cumRap.lichChieuPhim.map(
+                                      (lichChieu, index) => {
+                                        return (
+                                          <NavLink
+                                            key={index}
+                                            className="display-5 text-success m-2"
+                                            to={`/booking/${lichChieu.maLichChieu}`}
+                                          >
+                                            {/* // {moment().format(`${lichChieu.ngayChieuGioChieu}`) } */}
+                                            {/* {moment(`${lichChieu.ngayChieuGioChieu}`).format("hh:mm")} */}
+                                            {/* {_fortmatData(lichChieu)} */}
+                                            {lichChieu.ngayChieuGioChieu}
+                                            {(index + 1) % 5 === 0 ? (
+                                              <br />
+                                            ) : (
+                                                ""
+                                              )}
+                                          </NavLink>
+                                        );
+                                      }
+                                    )
+                                    : ""}
+                                </div>
+                              </div>
+                            );
+                          })
+                          : ""}
+                      </div>
+                    );
+                  } else {
+                    return (
+                      <div
+                        key={index}
+                        className="tab-pane container"
+                        id={htr.maHeThongRap}
+                      >
+                        {htr.cumRapChieu
+                          ? htr.cumRapChieu.map((cumRap, index) => {
+                            return (
+                              <div key={index} className="card text-left">
+                                <div className="card-body">
+                                  <h4 className="card-title">
+                                    {cumRap.tenCumRap}
+                                  </h4>
+                                  {cumRap.lichChieuPhim
+                                    ? cumRap.lichChieuPhim.map(
+                                      (lichChieu, index) => {
+                                        return (
+                                          <NavLink
+                                            key={index}
+                                            className="display-5 text-success m-2"
+                                            to={`/booking/${lichChieu.maLichChieu}`}
+                                          >
+                                            {lichChieu.ngayChieuGioChieu}
+                                            {(index + 1) % 5 === 0 ? (
+                                              <br />
+                                            ) : (
+                                                ""
+                                              )}
+                                          </NavLink>
+                                        );
+                                      }
+                                    )
+                                    : ""}
+                                </div>
+                              </div>
+                            );
+                          })
+                          : ""}
+                      </div>
+                    );
+                  }
+                })
                 : ""}
             </div>
           </div>

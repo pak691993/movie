@@ -48,7 +48,7 @@
     height: 15px;
   }
 }
-@media screen and (max-width:375px){
+@media screen and (max-width:360px){
   #footer{
     font-size: 8px;
     height: 100px;

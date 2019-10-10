@@ -7,7 +7,7 @@ export default class Footer extends Component {
       <footer id="footer" >
           <div className="container">
             <div className="row ">
-              <div className="col-md-4 col-sm-3 col-4 ">
+              <div className="col-md-4 col-sm-3 col-3 ">
                 <p className="title">Movie Start</p>
                   <div >
                     <span>VỀ CHÚNG TÔI</span><br />
@@ -15,7 +15,7 @@ export default class Footer extends Component {
                     <span >LIÊN HỆ</span>
                   </div>
               </div>
-              <div className="col-md-4 col-sm-7 col-4">
+              <div className="col-md-4 col-sm-7 col-5">
                 <p className="title">ĐỐI TÁC</p>
                 <div className="row col-md-12 col-sm-12 col-12">
                   <div>

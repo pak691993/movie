@@ -7,8 +7,32 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./ListMovie.css";
 
+function SampleNextArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style, display: "none", background: "red" }}
+      onClick={onClick}
+    />
+  );
+}
+
+function SamplePrevArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style, display: "none", background: "green" }}
+      onClick={onClick}
+    />
+  );
+}
+
+
 function ListMovies(props) {
   const settings = {
+    
     infinite: true,
     slidesToShow: 4,
     slidesToScroll: 4,
@@ -16,6 +40,8 @@ function ListMovies(props) {
     speed: 800,
     autoplaySpeed: 3500,
     cssEase: "linear",
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
     responsive: [
       {
         breakpoint: 1024,
@@ -35,7 +61,7 @@ function ListMovies(props) {
         }
       },
       {
-        breakpoint: 480,
+        breakpoint: 368,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1

@@ -32,9 +32,9 @@ header{
 position: fixed;
 }
 
-section{
+/* section{
   margin: 0 0 60px 0
-}
+} */
 ::-webkit-scrollbar {
   width: 6px;
 }
