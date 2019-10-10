@@ -61,7 +61,7 @@ function ListMovies(props) {
         }
       },
       {
-        breakpoint: 368,
+        breakpoint: 375,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1

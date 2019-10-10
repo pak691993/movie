@@ -3,9 +3,9 @@ body{
   font-weight: 400;
   line-height: 1.5;
   color: #eee;
-  background-color: #191D27;
-  background: url("http://bgfons.com/uploads/cloth/cloth_texture1068.jpg");
-  background-size: cover;
+  background-color: #1E212A;
+  /* background: url("http://bgfons.com/uploads/cloth/cloth_texture1068.jpg"); */
+  /* background-size: cover; */
   position: relative;
 }
 button {
